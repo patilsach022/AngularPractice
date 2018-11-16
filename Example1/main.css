@@ -1,0 +1,36 @@
+*{
+    margin:0px;
+    padding: 0px;
+}
+#header_section{
+    background: antiquewhite;
+    border: 1px solid black;
+    margin-left: 10px;
+    padding : 20px;
+    padding-right:40px;
+
+}
+#body_section{
+    background: antiquewhite;
+    border: 1px solid black;
+    margin-left: 10px;
+    padding: 20px;
+}
+#menu{
+    background: #dddddd;;
+    border: 1px solid black;
+    margin-left: 10px;
+    padding: 30px;
+    padding-left: 40px;
+}
+/*menu ul{
+    width:200px;
+}*/
+#menu li{
+    
+    list-style: none;
+    display: inline;
+    font: bold  14px Tahoma;
+    padding: 60px;
+    padding-left:0px;
+}

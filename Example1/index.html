@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myAPP">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bangalore Institue of technology</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body style="background-color:beige" ng-controller="homeController">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.20/angular-ui-router.js"></script>
+    <script src="LoginValidation.js"></script>
+    <div class="container-fluid">
+        <div class="row" id="header_section">
+            <div class="col-md-6">
+                <h1>Bangalore Institue of Technology</h1>
+            </div>
+            
+            <div class="col-md-6">
+                <table style="margin-left:auto">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label>Email</label> &emsp;
+                            </td>
+                            <td>
+                                <label>Password</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form name="form" novalidate>
+                                    <input type="text" name="enteredEmail" ng-model="enteredEmail" ng-pattern="/^[A-Za-z0-9]+@.*\.[a-zA-Z]{2,5}$/"
+                                        required>&emsp;
+                                </form>
+                            </td>
+
+                            <td>
+                                <form name="passwordform " novalidate>
+                                    <input type="password" name="enteredPassword" ng-model="enteredPassword" required>&emsp;
+                            </td>
+                          
+                            <td>
+                                <button class="btn btn-primary" ng-click="Validate()">Login</button>&emsp;
+                            </td>
+                            <td>
+                                <a ui-sref="Signup">Signup</a>
+                            </td>
+                        </tr>
+                
+                        
+                        <tr>
+                            <td>
+                                <span ng-if="!validated && submitted" style="color:red">Incorrect Email or Password</span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            
+            </div>
+        </div>
+
+
+        <!-- <div class="col-md-12">
+            <h1>About</h1>
+        </div>
+        <div style="text-align:justify" class="col-md-8">
+
+            <p>
+                Bangalore Institute of Technology came into existence in Aug. 1979, under the auspices of Vokkaligara
+                Sangha, Bangalore
+                with an intake of 242 students. The present strength of the institute is 2510. The institute is
+                provided with the
+                necessary modern infrastructural facilities. BIT has high qualified and experienced teachers. Several
+                companies have
+                recruited BITians. It is of pride and jubilation that the students of BIT are spread all over the world
+                and are holding
+                important positions as engineers and technologists.
+                BIT is currently affiliated to VTU. The institute initially offered the Bachelor of Engineering degrees
+                in Computer
+                Science, Electronics, Telecommunication, Instrumentation Technology, Electrical, Civil and Mechanical,
+                Information
+                Science and Engineering, Industrial Engineering and Management. Bangalore Institute of Technology was
+                the first
+                institute to introduce a full-fledged Computer Science and Engineering course in Karnataka.[2] It is
+                recognized by the
+                AICTE and has been accredited by NBA.[3] At present BIT offers 9 undergraduate, 10 post graduate and a
+                PhD course(s)
+                with a student body of more than 4000.</p>
+            <p>
+                There are a number of centres carrying out inter-disciplinary research and many collaborative
+                programmes exist between
+                the college and other institutions such as the Institute of Science (IISc) and National Aerospace
+                Laboratories
+                (N.A.L.). The college is also a program centre for Indira Gandhi National Open University (IGNOU).
+                Teaching and
+                research work is supported by facilities such as a central library with 90000 volumes of text books and
+                reference books
+                and an Industrial Consultancy and Research Center. The institute has an auditorium (1200 seating
+                capacity), seminar
+                hall, co-operative society, canteen, and cultural sections as well as hostels for boys and girls.;
+            </p>
+            <p>
+                Students of BIT have academic records and are placed in industries and corporate sectors. The college
+                offers placement
+                on campus for its students. A few of the companies which have visited the college for campus placements
+                are Oracle,
+                Bosch, Google, Dell, HP, Fidelity, IBM,Microchip, Accenture, TCE, L&T, ABB, Wipro, Tata Consultancy
+                Services (TCS),
+                Infosys, Quest, @WalmartLabs and HSBC. The graduates and post graduate students of BIT are continuously
+                trained on
+                aptitude, technical and soft skills. Seminars, workshops and faculty development program are conducted
+                on a regular
+                basis to update the advances in the field of engineering. Student’s forum like Rotract Club, TEDx,
+                Ecsa, ieee, XKalibre
+                and quiz club conduct various technical, cultural and sports events for faculty and students.
+            </p>
+        </div>
+
+
+        <div class="col-md-4">
+            <img src="Bangalore_Institute_of_Technology_logo.png">
+        </div>-->
+        <div class="row" id="menu">
+        <nav>
+            <ul>
+                <li><a ui-sref="Home">About</a></li>
+                <li><a ui-sref="Department">Departments</a></li>
+                <li><a ui-sref="ImportantDates">Important Dates</a></li>
+                <li ng-if="validated"><a ui-sref="Attendence">Attendence</a></li>
+            </ul>
+        </nav>
+        </div>
+        <div class="row" id="body_section">
+        <div class="col-md-12" ui-view></div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

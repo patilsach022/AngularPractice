@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="LoginValidation.js"></script>
+    <table style="margin-left:auto">
+        <tbody>
+            <tr>
+                <td>
+                    <label>Email</label> &emsp;
+                </td>
+                <td>
+                    <label>Password</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <form name="form" novalidate>
+                        <input type="text" name="enteredEmail" ng-model="enteredEmail" ng-pattern="/^[A-Za-z0-9]+@.*\.[a-zA-Z]{2,5}$/"
+                            required>&emsp;
+                        <span style="color:red" ng-if="form.enteredEmail.$invalid && submitted">Invalid
+                            email</span>
+                    </form>
+                </td>
+    
+                <td>
+                    <form name="passwordform " novalidate>
+                        <input type="password" name="enteredPassword" ng-model="enteredPassword" required>&emsp;
+                </td>
+                <td>
+                    <button class="btn btn-primary" ng-click="Validate()">Login</button>&emsp;
+                </td>
+                <td>
+                    <a ui-sref="Signup">Signup</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span ng-if="!validated && submitted" style="color:red">Incorrect Email or Password</span>
+                </td>
+            </tr>
+    
+        </tbody>
+    </table>
+</body>
+</html>

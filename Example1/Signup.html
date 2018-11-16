@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+<body style=background-color:beige>
+    <h1>Create Your Account</h1>
+    <div class="container">
+        <form name="Userentryform" novalidate>
+            <div class="form-group">
+                <label>Name:</label>
+                <input class="form-control" name="Name" ng-model="studentEntry.Name" ng-pattern="/[A-Za-z]+/" placeholder="Name"
+                    required>
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input class="form-control" name="Email" ng-model="studentEntry.Email" ng-pattern="/^[A-Za-z0-9]+@.*\.[a-zA-Z]{2,5}$/"
+                    placeholder="Email" required>
+               </div>
+            <div class="form-group">
+                <label>Gender</label>
+                <label class="radio-inline">
+                    <input type="radio" name="Gender" value="Male" ng-model="studentEntry.Gender" ng-required="true">Male
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="Gender" value="Female" ng-model="studentEntry.Gender">Female
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="select">Select your Language</label>
+                <select name="Lang" ng-model="studentEntry.Language" ng-options="lang for lang in Language" required>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" class="form-control" name="password" ng-model="studentEntry.password" placeholder="password"
+                    required>
+            </div>
+            <div class="form-group">
+                <label>Confirm Password:</label>
+                    <input type="password" class="form-control" name="confirmpass" ng-model="studentEntry.confirmpass"
+                        placeholder="confirm password" required>
+                    <span style="color:red" ng-if="!passmatch">Password doesn't match</span>
+            </div>
+            <div class="form-group">
+                <label>Passout Year:</label>
+                <input class="form-control" name="passoutYear" ng-model="studentEntry.passYear" ng-pattern="/[0-9]+/" placeholder="Passout Year"
+                    required>
+            </div>
+            <div class="form-group">
+                <label>Total Aggregate:</label>
+                <input class="form-control" name="totalAggregate" ng-model="studentEntry.totalAggregate" ng-pattern="/[0-9]+/" placeholder="TotalAggregate"
+                    required>
+            </div>
+            <button class="btn btn-primary" type="submit" ng-click="CreateEntry()">Submit</button> &emsp;
+            <a ui-sref="Home">Back</a>
+    </body>
+</html>
